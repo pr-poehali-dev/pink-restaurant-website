@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -55,7 +56,10 @@ const Index = () => {
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 animate-fade-in">
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-primary">La Rose</h1>
+            <div className="flex items-center gap-4">
+              <h1 className="text-3xl font-bold text-primary">La Rose</h1>
+              <Link to="/cat-cafe" className="text-sm text-muted-foreground hover:text-primary transition-colors">😺 Котокафе</Link>
+            </div>
             <div className="hidden md:flex gap-6">
               {['Главная', 'О нас', 'Меню', 'Отзывы', 'Контакты'].map((item) => (
                 <button
