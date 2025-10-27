@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { Link } from 'react-router-dom';
+import Gallery from '@/components/ui/gallery';
 
 const CatCafe = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -66,6 +67,29 @@ const CatCafe = () => {
       name: 'Дарья Пушистая',
       text: 'Приходим сюда каждые выходные! Атмосфера просто волшебная, а кот-капучино — это искусство. Персонал очень дружелюбный.',
       rating: 5,
+    },
+  ];
+
+  const galleryImages = [
+    {
+      url: 'https://cdn.poehali.dev/projects/76c44277-b4cb-4dad-9ab7-a73b631fd849/files/5e20d9ba-5318-4dea-b487-968e080daca3.jpg',
+      title: 'Котлетки-котята',
+      description: 'Милые котлетки в форме котиков с гарниром - хит среди детей',
+    },
+    {
+      url: 'https://cdn.poehali.dev/projects/76c44277-b4cb-4dad-9ab7-a73b631fd849/files/703d69cc-5602-4e16-8017-09ddca04d552.jpg',
+      title: 'Десерты-котики',
+      description: 'Мяу-каронс и печенье в виде кошачьих мордочек',
+    },
+    {
+      url: 'https://cdn.poehali.dev/projects/76c44277-b4cb-4dad-9ab7-a73b631fd849/files/62d60f3e-d254-4676-ac94-d9c44b6139de.jpg',
+      title: 'Кот-капучино',
+      description: 'Авторские рисунки котиков на каждом капучино',
+    },
+    {
+      url: 'https://cdn.poehali.dev/projects/76c44277-b4cb-4dad-9ab7-a73b631fd849/files/055ca96f-aa60-47d2-be08-9c27772f258e.jpg',
+      title: 'Пушистый омлет',
+      description: 'Воздушный омлет в форме спящего котенка',
     },
   ];
 
@@ -230,6 +254,15 @@ const CatCafe = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-blue-100">
+        <div className="container mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-blue-700 text-center mb-12 animate-fade-in">
+            Галерея котиков 📸
+          </h2>
+          <Gallery images={galleryImages} theme="blue" />
         </div>
       </section>
 

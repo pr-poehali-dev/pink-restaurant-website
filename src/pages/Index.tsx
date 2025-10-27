@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { Link } from 'react-router-dom';
+import Gallery from '@/components/ui/gallery';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -48,6 +49,39 @@ const Index = () => {
       description: 'Свежайшие морепродукты в авторской подаче',
       price: '3 200 ₽',
       image: 'https://cdn.poehali.dev/projects/76c44277-b4cb-4dad-9ab7-a73b631fd849/files/fc39011e-3d9c-4156-9393-15374222b109.jpg',
+    },
+  ];
+
+  const galleryImages = [
+    {
+      url: 'https://cdn.poehali.dev/projects/76c44277-b4cb-4dad-9ab7-a73b631fd849/files/aa433dc0-df9f-4b3d-86d5-9d26dcf5a117.jpg',
+      title: 'Стейк рибай',
+      description: 'Сочный стейк из мраморной говядины с гарниром из овощей гриль',
+    },
+    {
+      url: 'https://cdn.poehali.dev/projects/76c44277-b4cb-4dad-9ab7-a73b631fd849/files/055ca96f-aa60-47d2-be08-9c27772f258e.jpg',
+      title: 'Макаронс ассорти',
+      description: 'Французские макаронс с различными начинками и свежими ягодами',
+    },
+    {
+      url: 'https://cdn.poehali.dev/projects/76c44277-b4cb-4dad-9ab7-a73b631fd849/files/62d60f3e-d254-4676-ac94-d9c44b6139de.jpg',
+      title: 'Морское плато',
+      description: 'Ассорти из лобстера, креветок и свежих устриц на льду',
+    },
+    {
+      url: 'https://cdn.poehali.dev/projects/76c44277-b4cb-4dad-9ab7-a73b631fd849/files/b9725589-8959-4801-965c-78a9cf567668.jpg',
+      title: 'Паста с трюфелем',
+      description: 'Домашняя паста с черным трюфелем и пармезаном',
+    },
+    {
+      url: 'https://cdn.poehali.dev/projects/76c44277-b4cb-4dad-9ab7-a73b631fd849/files/e0b9fb1a-6fb9-4a16-903c-5ee1c455208b.jpg',
+      title: 'Интерьер ресторана',
+      description: 'Элегантный зал в розовых тонах для особенных мероприятий',
+    },
+    {
+      url: 'https://cdn.poehali.dev/projects/76c44277-b4cb-4dad-9ab7-a73b631fd849/files/f454f6ed-9a3d-42b5-86df-825d4f5f1507.jpg',
+      title: 'Авторский десерт',
+      description: 'Шоколадный десерт с малиновым соусом и золотым декором',
     },
   ];
 
@@ -177,7 +211,16 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="отзывы" className="py-16 px-4 bg-secondary/30">
+      <section className="py-16 px-4 bg-secondary/30">
+        <div className="container mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-12 animate-fade-in">
+            Галерея блюд
+          </h2>
+          <Gallery images={galleryImages} theme="pink" />
+        </div>
+      </section>
+
+      <section id="отзывы" className="py-16 px-4">
         <div className="container mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-12 animate-fade-in">
             Отзывы гостей
